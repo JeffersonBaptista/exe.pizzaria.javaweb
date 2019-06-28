@@ -13,10 +13,22 @@ public class PizzaController {
 	@Autowired
 	private PizzaService pizzaService;
 
-	@GetMapping
+	@GetMapping("/")
 	public ModelAndView exibirCardapio() {
-		ModelAndView modelAnsView = new ModelAndView("pizzaria.html");
+		ModelAndView modelAnsView = new ModelAndView("pizzaria.html");		
+		return modelAnsView;
+	}
+	
+	@GetMapping("/cardapio")
+	public ModelAndView cardapio() {
+		ModelAndView modelAnsView = new ModelAndView("cardapio.html");
 		modelAnsView.addObject("cardapio", pizzaService.exibirCardatio());
+		return modelAnsView;
+	}
+	
+	@GetMapping("/criarpizza")
+	public ModelAndView criarPizza() {
+		ModelAndView modelAnsView = new ModelAndView("criarpizza.html");
 		return modelAnsView;
 	}
 }

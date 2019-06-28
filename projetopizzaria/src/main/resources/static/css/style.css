@@ -1,8 +1,30 @@
+body{
+    margin: 0;
+}
+.menu{
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    background-color: rgb(218, 165, 32);
+    justify-content: space-between;
+    
+}
+
 .lista{
     display: flex;
     justify-content: space-between;
     
 }
 .lista li{
-    padding-left: 50px;
+    padding-left: 10px;
+    list-style: none;
+    
 }
+a{
+    text-decoration: none;
+    color:black;   
+}   
+.cardapio{
+	 background-color:rgba(218, 165, 32, .40);
+}
+

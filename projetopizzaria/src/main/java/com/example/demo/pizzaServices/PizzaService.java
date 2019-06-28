@@ -23,4 +23,5 @@ public class PizzaService {
 	public Collection<PizzaModel> exibirCardatio() {
 		return this.listaPizzas.values();
 	}
+	
 }
