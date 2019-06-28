@@ -3,6 +3,7 @@ package com.example.demo.pizzaControllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -25,6 +26,7 @@ public class PizzaController {
 	public ModelAndView cardapio() {
 		ModelAndView modelAnsView = new ModelAndView("cardapio.html");
 		modelAnsView.addObject("cardapio", pizzaService.exibirCardatio());
+		modelAnsView.addObject("chaves", pizzaService.pegarChaves());
 		return modelAnsView;
 	}
 	
@@ -37,5 +39,12 @@ public class PizzaController {
 	public String novoPost(PizzaModel pizzaModel) {
 		pizzaService.novaPizza(pizzaModel);
 		return "/criarpizza";
+	}
+	
+	@GetMapping("/pizza/{id}")
+	public ModelAndView pegarPizza(@PathVariable Integer id) {
+		ModelAndView modelAnsView = new ModelAndView("pizza.html");
+		modelAnsView.addObject("pizza", pizzaService.pegarPizza(id));
+		return modelAnsView;
 	}
 }
