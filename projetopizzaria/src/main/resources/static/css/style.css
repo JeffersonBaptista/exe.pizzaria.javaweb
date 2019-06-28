@@ -1,0 +1,8 @@
+.lista{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.lista li{
+    padding-left: 50px;
+}

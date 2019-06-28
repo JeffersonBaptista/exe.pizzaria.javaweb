@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jefferson Pizzas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div>
+        <nav>
+            <ul class="lista">
+                <li> <a href="https://www.spotify.com/br/">Premium</a> </li>
+                <li> <a href="#">Ajuda</a> </li>
+                <li> <a href="#">Baixar</a> </li>
+                <li> <a href="#">Entrar</a> </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div>
+        <div class="pizza" th:each="pizzas : ${cardapio}">
+            <h3 Nome th:text="${pizzas.nome}"></h3>
+            <p th:text="${pizzas.sabor}"></p>
+            <p th:text="${pizzas.massa}"></p>
+            <p th:text="${pizzas.borda}"></p>
+            <h3 th:text="${pizzas.valor}"></h3>>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+this.nome = nome;
+this.sabor = sabor;
+this.massa = massa;
+this.borda = borda;
+this.valor = valor;
