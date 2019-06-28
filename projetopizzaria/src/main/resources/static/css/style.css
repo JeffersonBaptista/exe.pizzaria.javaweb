@@ -1,30 +1,40 @@
-body{
+body {
     margin: 0;
 }
-.menu{
+
+.menu {
     display: flex;
     flex-direction: row;
     margin: 0;
     background-color: rgb(218, 165, 32);
     justify-content: space-between;
-    
 }
 
-.lista{
+.lista {
     display: flex;
     justify-content: space-between;
-    
-}
-.lista li{
-    padding-left: 10px;
-    list-style: none;
-    
-}
-a{
-    text-decoration: none;
-    color:black;   
-}   
-.cardapio{
-	 background-color:rgba(218, 165, 32, .40);
 }
 
+.lista li {
+    padding-left: 10px;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.cardapio {
+    background-color: rgba(218, 165, 32, .40);
+}
+
+.divform {
+    background-color: rgba(218, 165, 32, .40);
+
+}
+
+.areaform {
+    margin-right: 600px;
+    margin-left: 30px;
+}

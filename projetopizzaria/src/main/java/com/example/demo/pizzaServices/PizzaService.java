@@ -24,4 +24,9 @@ public class PizzaService {
 		return this.listaPizzas.values();
 	}
 	
+	public void novaPizza(PizzaModel pizzaModel) {
+		listaPizzas.put(listaPizzas.size()+1, pizzaModel );
+		
+	}
+	
 }

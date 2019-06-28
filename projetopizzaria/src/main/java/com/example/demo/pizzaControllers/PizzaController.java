@@ -3,8 +3,10 @@ package com.example.demo.pizzaControllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.example.demo.pizzaModels.PizzaModel;
 import com.example.demo.pizzaServices.PizzaService;
 
 @Controller
@@ -30,5 +32,10 @@ public class PizzaController {
 	public ModelAndView criarPizza() {
 		ModelAndView modelAnsView = new ModelAndView("criarpizza.html");
 		return modelAnsView;
+	}
+	@PostMapping("/criarpizza")
+	public String novoPost(PizzaModel pizzaModel) {
+		pizzaService.novaPizza(pizzaModel);
+		return "/criarpizza";
 	}
 }
