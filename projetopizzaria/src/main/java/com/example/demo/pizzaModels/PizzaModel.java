@@ -1,17 +1,36 @@
 package com.example.demo.pizzaModels;
 
-public class PizzaModel {
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+
+@Entity
+public class PizzaModel implements Serializable{
+	private static final long serilVersionUID = 1L;
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+	@NotNull
 	private String nome;
+	@NotNull
 	private String sabor;
+	@NotNull
 	private String massa;
+	@NotNull
 	private String borda;
+	@NotNull
 	private double valor;
 	
 	public PizzaModel() {
 		
 	}
-	public PizzaModel(String nome, String sabor, String massa, String borda, double valor) {
+	public PizzaModel(Integer id, String nome, String sabor, String massa, String borda, double valor) {
+		this.id = id;
 		this.nome = nome;
 		this.sabor = sabor;
 		this.massa = massa;
@@ -19,6 +38,13 @@ public class PizzaModel {
 		this.valor = valor;
 	}
 	
+	
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
 	public String getNome() {
 		return nome;
 	}

@@ -26,7 +26,7 @@ public class PizzaController {
 	public ModelAndView cardapio() {
 		ModelAndView modelAnsView = new ModelAndView("cardapio.html");
 		modelAnsView.addObject("cardapio", pizzaService.exibirCardatio());
-		modelAnsView.addObject("chaves", pizzaService.pegarChaves());
+		//modelAnsView.addObject("chaves", pizzaService.pegarChaves());
 		return modelAnsView;
 	}
 	
@@ -41,10 +41,10 @@ public class PizzaController {
 		return "/criarpizza";
 	}
 	
-	@GetMapping("/pizza/{id}")
-	public ModelAndView pegarPizza(@PathVariable Integer id) {
-		ModelAndView modelAnsView = new ModelAndView("pizza.html");
-		modelAnsView.addObject("pizza", pizzaService.pegarPizza(id));
-		return modelAnsView;
-	}
+//	@GetMapping("/pizza/{id}")
+//	public ModelAndView pegarPizza(@PathVariable Integer id) {
+//		ModelAndView modelAnsView = new ModelAndView("pizza.html");
+//		modelAnsView.addObject("pizza", pizzaService.pegarPizza(id));
+//		return modelAnsView;
+//	}
 }
